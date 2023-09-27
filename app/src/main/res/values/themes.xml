@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FurnitureStore" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textColor">@color/black_text</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splashscreen</item>
+        <item name="android:statusBarColor">@color/gold_400</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textColor">@color/black_text</item>
+    </style>
+
+    <style name="Theme.FurnitureStore" parent="Base.Theme.FurnitureStore" />
+</resources>
