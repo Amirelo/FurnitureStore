@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furniturestore.MainActivity
 import com.example.furniturestore.R
 import com.example.furniturestore.utilities.Utils
 import java.net.URL
@@ -43,17 +44,19 @@ class StoryAdapter(private val dataSet: Array<String>, private val context: Cont
         holder.tvStory.text = dataSet[position]
         val res:Resources = context.resources
 
-        val executor = Executors.newSingleThreadExecutor()
-        val handler = Handler(Looper.getMainLooper())
+            val thread = Thread(Runnable {
+                val img = res.getStringArray(R.array.arr_story_images)[position]
 
-        executor.execute{
-            val img = res.getStringArray(R.array.arr_story_images)[position]
+                val bmp = Utils().getImg(img);
 
-            val bmp = Utils().getImg(img);
+                holder.ivStory.post(Runnable{
+                    holder.ivStory.setImageBitmap(bmp)
+                })
 
-            handler.post{holder.ivStory.setImageBitmap(bmp);}
+            })
+        thread.start()
 
-        }
+
 
 
 
