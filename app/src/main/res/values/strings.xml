@@ -20,11 +20,11 @@
     <string name="room_4">dining</string>
     <string name="room_5">bathroom</string>
 
-    <string name="room_image_1">https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1</string>
-    <string name="room_image_2">https://images.pexels.com/photos/3952034/pexels-photo-3952034.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1</string>
-    <string name="room_image_3">https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1</string>
-    <string name="room_image_4">https://images.pexels.com/photos/3144581/pexels-photo-3144581.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1</string>
-    <string name="room_image_5">https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1</string>
+    <string name="room_image_1">https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg</string>
+    <string name="room_image_2">https://images.pexels.com/photos/3952034/pexels-photo-3952034.jpeg</string>
+    <string name="room_image_3">https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg</string>
+    <string name="room_image_4">https://images.pexels.com/photos/3144581/pexels-photo-3144581.jpeg</string>
+    <string name="room_image_5">https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg</string>
 
     <string-array name="arr_stories">
         <item>@string/story_1</item>

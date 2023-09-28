@@ -9,6 +9,10 @@ class Utils {
     fun  getImg(path: String): Bitmap{
         val url = URL(path);
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-        return bmp;
+
+        val resizeBmp: Bitmap = Bitmap.createScaledBitmap(bmp, 640, 320, true)
+
+
+        return resizeBmp;
     }
 }
