@@ -2,6 +2,7 @@ package com.example.furniturestore.adapters
 
 import android.content.Context
 import android.content.res.Resources
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -52,6 +53,12 @@ class RoomAdapter (private val dataset: Array<String>, private val context:Conte
         holder.itemView.setOnClickListener{
             val activity: MainActivity = context as MainActivity
             val fragment: Fragment = SearchFragment()
+
+            val bundle: Bundle = Bundle()
+            bundle.putString("SEARCHTITLE", dataset[position])
+
+            fragment.arguments = bundle
+
             activity.changeFragment(fragment)
         }
     }

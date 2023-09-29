@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.adapters.CategoryAdapter
 import com.example.furniturestore.models.Category
+import com.google.android.material.appbar.MaterialToolbar
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -18,6 +19,7 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View =  inflater.inflate(R.layout.fragment_search, container, false)
         val rcCategories: RecyclerView = view.findViewById(R.id.rcCategories)
+        val toolbar: MaterialToolbar = view.findViewById(R.id.toolbar)
 
         // Category list
         val cate1 = Category(1, "Furniture","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
@@ -38,6 +40,14 @@ class SearchFragment : Fragment() {
         rcCategories.adapter = categoryAdapter
 
         rcCategories.layoutManager = LinearLayoutManager(context)
+
+        val bundle:Bundle = requireArguments()
+
+        toolbar.title = bundle.getString("SEARCHTITLE")
+
+        toolbar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
 
         return view
     }
