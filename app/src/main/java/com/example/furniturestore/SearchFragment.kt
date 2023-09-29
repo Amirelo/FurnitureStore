@@ -8,10 +8,14 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.adapters.CategoryAdapter
+import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.models.Category
 import com.example.furniturestore.models.Product
 import com.google.android.material.appbar.MaterialToolbar
@@ -24,7 +28,10 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View =  inflater.inflate(R.layout.fragment_search, container, false)
         val rcCategories: RecyclerView = view.findViewById(R.id.rcCategories)
+        val rcProducts: RecyclerView = view.findViewById(R.id.rcProducts)
         val toolbar: MaterialToolbar = view.findViewById(R.id.toolbar)
+        val llOptions: LinearLayout = view.findViewById(R.id.llOptions)
+        val tvTitleCategory: TextView = view.findViewById(R.id.tvTitleCategory)
 
         // temp category list
         val cate1 = Category(1, "Furniture","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
@@ -48,10 +55,13 @@ class SearchFragment : Fragment() {
         val listProducts = listOf(obj1,obj2,obj3,obj4)
 
         val categoryAdapter = CategoryAdapter(listCategory)
+        val productAdapter = ProductRowAdapter(listProducts, requireContext())
 
         rcCategories.adapter = categoryAdapter
+        rcProducts.adapter = productAdapter
 
         rcCategories.layoutManager = LinearLayoutManager(context)
+        rcProducts.layoutManager = GridLayoutManager(context, 2)
 
         val bundle:Bundle = requireArguments()
 
@@ -72,6 +82,10 @@ class SearchFragment : Fragment() {
                 if (child != null && gestureDetector.onTouchEvent(e)){
                     val position = rv.getChildAdapterPosition(child)
                     Toast.makeText(requireContext(), listCategory[position].name, Toast.LENGTH_SHORT).show()
+                    rcCategories.visibility = View.GONE
+                    tvTitleCategory.visibility = View.GONE
+                    rcProducts.visibility = View.VISIBLE
+                    llOptions.visibility = View.VISIBLE
                 }
                 return false
             }
