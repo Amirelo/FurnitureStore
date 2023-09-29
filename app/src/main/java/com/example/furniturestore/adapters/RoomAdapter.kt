@@ -2,13 +2,17 @@ package com.example.furniturestore.adapters
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furniturestore.MainActivity
 import com.example.furniturestore.R
+import com.example.furniturestore.SearchFragment
 import com.example.furniturestore.utilities.Utils
 
 class RoomAdapter (private val dataset: Array<String>, private val context:Context):
@@ -44,6 +48,12 @@ class RoomAdapter (private val dataset: Array<String>, private val context:Conte
             })
         })
         thread.start()
+
+        holder.itemView.setOnClickListener{
+            val activity: MainActivity = context as MainActivity
+            val fragment: Fragment = SearchFragment()
+            activity.changeFragment(fragment)
+        }
     }
 
 }

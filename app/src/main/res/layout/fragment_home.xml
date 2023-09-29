@@ -24,13 +24,16 @@
             android:textStyle="bold"
             android:text="Ulmo" />
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="8dp"
-            android:background="@color/gray_tab"
+            android:clipToOutline="true"
+            android:backgroundTint="@color/gray_tab"
+            android:background="@drawable/border_rounded"
             android:textColorHint="@color/gray_placeholder"
+            android:iconifiedByDefault="false"
             android:inputType="text"/>
 
         <androidx.recyclerview.widget.RecyclerView

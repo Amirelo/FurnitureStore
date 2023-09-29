@@ -2,6 +2,7 @@ package com.example.furniturestore
 
 import android.content.res.Resources
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -71,6 +72,7 @@ class HomeFragment : Fragment() {
         val popularDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         popularDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.spacing_ver_16)!!)
         rcPopulars.addItemDecoration(popularDecoration)
+
 
         return view
     }

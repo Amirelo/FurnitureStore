@@ -16,4 +16,11 @@ class MainActivity : AppCompatActivity() {
             .commit();
 
     }
+
+    fun changeFragment(fragment: Fragment){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.flMain, fragment)
+            .commit();
+    }
 }
