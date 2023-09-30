@@ -1,9 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProductDetails">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="4dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/border_circle"
+        android:src="@drawable/arrow_left"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:padding="4dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/border_circle"
+        android:src="@drawable/heart"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcProdImages"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rcProdImages"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:text="@string/item_text_not_loaded"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPrice"
+        android:textColor="@color/gray_placeholder"
+        android:text="@string/item_text_not_loaded"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcColors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDescription"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rcColors"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="@color/gold_400"
+        app:icon="@drawable/bag"
+        app:iconGravity="textEnd"
+        app:iconTint="@color/black_text"
+        android:textColor="@color/black_text"
+        android:text="@string/item_text_not_loaded"/>
+
+        <RelativeLayout
+            android:id="@+id/rlDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="16dp"
+            android:layout_below="@+id/btnAdd">
+
+            <ImageView
+                android:id="@+id/ivDiscountIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/sale"/>
+
+            <TextView
+                android:id="@+id/tvDiscountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivDiscountIcon"
+                android:layout_marginStart="16dp"
+                android:textSize="14sp"
+                android:text="Discount for you"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivDiscountIcon"
+                android:layout_marginStart="16dp"
+                android:layout_below="@+id/tvDiscountTitle"
+                android:textColor="@color/gray_placeholder"
+                android:textSize="14sp"
+                android:text="Use promocode ULMO"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                app:backgroundTint="@color/gold_400"
+                android:background="@drawable/border_rounded_8"
+                android:textColor="@color/black_text"
+                android:text="Copy"/>
+            
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tvProductInfo"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_below="@+id/rlDiscount"
+            app:backgroundTint="#00000000"
+            app:icon="@drawable/chevron_right"
+            app:iconTint="@color/black_text"
+            app:iconGravity="end"
+            android:textAlignment="textStart"
+            android:textColor="@color/black_text"
+            android:text="Product Infomation"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReviews"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_below="@+id/tvProductInfo"
+            app:backgroundTint="#00000000"
+            android:textAlignment="textStart"
+            android:textColor="@color/black_text"
+            android:text="Reviews"/>
+
+        <TextView
+            android:id="@+id/tvReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_below="@+id/tvProductInfo"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/gray_placeholder"
+            android:text="-50"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_below="@+id/btnReviews"
+            android:layout_marginBottom="8dp"
+            app:backgroundTint="#00000000"
+            android:textAlignment="textStart"
+            android:textColor="@color/black_text"
+            android:text="Questions and answers"/>
+
+        <TextView
+            android:id="@+id/tvQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_below="@+id/btnReviews"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/gray_placeholder"
+            android:text="-50"/>
+
+        <TextView
+            android:id="@+id/tvOtherProductsHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnQuestions"
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="You might also like"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcOtherProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvOtherProductsHeader"/>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -82,6 +82,9 @@ class SearchFragment : Fragment() {
                 if (child != null && gestureDetector.onTouchEvent(e)){
                     val position = rv.getChildAdapterPosition(child)
                     Toast.makeText(requireContext(), listCategory[position].name, Toast.LENGTH_SHORT).show()
+
+                    toolbar.title = listCategory[position].name
+
                     rcCategories.visibility = View.GONE
                     tvTitleCategory.visibility = View.GONE
                     rcProducts.visibility = View.VISIBLE

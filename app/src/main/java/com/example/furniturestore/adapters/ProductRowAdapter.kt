@@ -52,5 +52,6 @@ class ProductRowAdapter (private val dataset: List<Product>, context: Context) :
             })
         })
         thread.start()
+
     }
 }
