@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilterActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_clear"
+        app:titleCentered="true"
+        app:title="Filter">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end"
+            android:textSize="20sp"
+            android:text="Clear"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sliderPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sliderPrice"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="#0000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_text"
+        android:text="Category"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/sliderPrice"
+        android:textColor="@color/gray_placeholder"
+        android:text="Furniture"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProdType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCategory"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="#0000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_text"
+        android:text="Product type"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnCategory"
+        android:textColor="@color/gray_placeholder"
+        android:text="All"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnProdType"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="#0000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_text"
+        android:text="Color"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnColor"
+        android:textColor="@color/gray_placeholder"
+        android:text="All"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnColor"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="#0000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_text"
+        android:text="Size"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnProdType"
+        android:textColor="@color/gray_placeholder"
+        android:text="All"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnQuality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/btnSize"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="#0000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_text"
+        android:text="Quality"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnSize"
+        android:textColor="@color/gray_placeholder"
+        android:text="All"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/btnQuality"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:clipToOutline="true"
+        android:background="@drawable/border_rounded_8"
+        app:backgroundTint="@color/gold_400"
+        android:textColor="@color/black_text"
+        android:text="Show 25 items"/>
+    </LinearLayout>
+
+</RelativeLayout>
