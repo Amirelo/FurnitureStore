@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ConnectionLostFragment">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:paddingHorizontal="16dp"
+       android:orientation="vertical">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="64dp"
+       android:layout_marginBottom="100dp"
+       android:textAlignment="center"
+       android:textSize="32sp"
+       android:textStyle="bold"
+       android:text="Ulmo"/>
+
+      <include layout="@layout/view_prompt"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textAlignment="center"
+          android:textSize="16sp"
+          android:textColor="@color/gray_placeholder"
+          android:text="so, it’s looks like you don’t have an intternet connection right now"/>
+
+
+
+   </LinearLayout>
+
+   <com.google.android.material.button.MaterialButton
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom"
+       android:layout_marginHorizontal="16dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/border_rounded_8"
+       app:backgroundTint="@color/gold_400"
+       android:textColor="@color/black_text"
+       android:text="Retry"/>
+</FrameLayout>

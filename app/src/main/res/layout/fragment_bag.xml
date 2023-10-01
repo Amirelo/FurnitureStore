@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BagFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="56dp"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:text="Bag"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcBagItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_below="@+id/tvHeader"/>
+
+        <TextView
+            android:id="@+id/tvTitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rcBagItems"
+            android:layout_marginVertical="16dp"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:text="Promocode"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPromocode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/border_rounded_8"
+            app:backgroundTint="@color/gray_tab"
+            android:layout_below="@+id/tvTitle1"
+            app:iconTint="@color/black_text"
+            app:iconGravity="end"
+            app:icon="@drawable/clear"
+            android:textColor="@color/black_text"
+            android:textAlignment="viewStart"
+            android:text="ULMO"/>
+
+        <TextView
+            android:id="@+id/tvTotalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnPromocode"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="Total"/>
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/btnPromocode"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="$430"/>
+
+        <TextView
+            android:id="@+id/tvPromoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@+id/tvTotalText"
+            android:textColor="@color/gray_placeholder"
+            android:textSize="16sp"
+            android:text="Promocode"/>
+
+        <TextView
+            android:id="@+id/tvPromoPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tvTotalText"
+            android:textColor="@color/gray_placeholder"
+            android:textSize="16sp"
+            android:text="-$30"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_below="@+id/tvPromoText"
+            android:background="@drawable/border_rounded_8"
+            app:backgroundTint="@color/gold_400"
+            android:textColor="@color/black_text"
+            android:text="Checkout"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
