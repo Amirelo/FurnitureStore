@@ -33,8 +33,9 @@
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="240dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="20dp"
         android:layout_toEndOf="@id/ivProduct"
         android:layout_below="@+id/tvPrice"
@@ -42,41 +43,40 @@
         android:textColor="@color/gray_placeholder"
         android:text="Wooden bedside table featuring a raised design"/>
 
-    <ImageView
-        android:id="@+id/ivDecrease"
-        android:layout_width="36dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_toEndOf="@id/ivProduct"
         android:layout_below="@+id/tvDescription"
-        android:src="@drawable/minus"
         android:background="@drawable/border_rounded_8"
         android:backgroundTint="@color/gray_tab"
-        android:clipToOutline="true"/>
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/ivDecrease"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/minus"/>
 
-    <TextView
-        android:id="@+id/tvQuantity"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="4dp"
-        android:gravity="center"
-        android:background="@drawable/border_top_rounded_24"
-        android:backgroundTint="@color/gray_tab"
-        android:layout_below="@+id/tvDescription"
-        android:layout_toEndOf="@id/ivDecrease"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:text="0"/>
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/border_none"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="1"/>
 
-    <ImageView
-        android:id="@+id/ivIncrease"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_toEndOf="@id/tvQuantity"
-        android:layout_below="@+id/tvDescription"
-        android:src="@drawable/plus"
-        android:background="@drawable/border_rounded_8"
-        android:backgroundTint="@color/gray_tab"
-        android:clipToOutline="true"/>
+        <ImageView
+            android:id="@+id/ivIncrease"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/plus"/>
+
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>
