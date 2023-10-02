@@ -18,8 +18,22 @@
     <style name="PrimaryButtonStyle">
         <item name="android:background">@drawable/border_rounded_8</item>
         <item name="backgroundTint">@color/gold_400</item>
+        <item name="maxWidth">300dp</item>
         <item name="android:textColor">@color/black_text</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TertiaryButtonStyle">
+        <item name="android:background">@drawable/border_rounded_8</item>
+        <item name="backgroundTint">@color/gray_tab</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="outlineButtonStyle">
+        <item name="android:background">@drawable/border_outline_8</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="backgroundTint">@color/black_text</item>
     </style>
     
     <style name="textTitle">

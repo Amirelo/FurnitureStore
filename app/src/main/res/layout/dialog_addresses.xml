@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="48dp"
+    android:background="@drawable/border_top_rounded_24"
+    android:clipToOutline="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:text="Sort by"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcAddresses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TertiaryButtonStyle"
+        android:text="Cancel"/>
+
+</LinearLayout>
