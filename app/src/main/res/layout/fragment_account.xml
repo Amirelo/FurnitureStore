@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AccountFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical">
+        
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/settings"
+            android:layout_gravity="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/textHeader"
+            android:text="my account"/>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/item_user"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/TertiaryButtonStyleNoBG"
+            app:iconTint="@color/black_text"
+            app:icon="@drawable/bag"
+            android:textAlignment="viewStart"
+            android:text="My orders"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/TertiaryButtonStyleNoBG"
+            app:iconTint="@color/black_text"
+            app:icon="@drawable/user"
+            android:textAlignment="viewStart"
+            android:text="My details"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/TertiaryButtonStyleNoBG"
+            app:iconTint="@color/black_text"
+            app:icon="@drawable/pin"
+            android:textAlignment="viewStart"
+            android:text="Address book"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/TertiaryButtonStyleNoBG"
+            app:iconTint="@color/black_text"
+            app:icon="@drawable/card"
+            android:textAlignment="viewStart"
+            android:text="Payment methods"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/TertiaryButtonStyleNoBG"
+            app:iconTint="@color/black_text"
+            app:icon="@drawable/logout"
+            android:textAlignment="viewStart"
+            android:text="Sign out"/>
+
+    </LinearLayout>
+
+</FrameLayout>

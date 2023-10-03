@@ -30,6 +30,13 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="TertiaryButtonStyleNoBG">
+        <item name="android:background">@drawable/border_rounded_8</item>
+        <item name="backgroundTint">#0000</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="outlineButtonStyle">
         <item name="android:background">@drawable/border_outline_8</item>
         <item name="android:textColor">@color/black_text</item>
