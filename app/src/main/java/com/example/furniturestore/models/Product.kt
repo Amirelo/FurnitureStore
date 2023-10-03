@@ -9,12 +9,6 @@ data class Product (
     var description: String,
     var addedDate: String,
     var prodImg: String,
-    var height: Float,
-    var width: Float,
-    var depth: Float,
-    var weight: Float,
-    var mainMaterial: String,
-    var composition: String
 )
 
 
