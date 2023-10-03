@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SearchFragment">
+    tools:context=".fragments.SearchFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -36,7 +36,8 @@
                 android:background="@drawable/border_rounded_8"
                 android:textColorHint="@color/gray_placeholder"
                 android:iconifiedByDefault="false"
-                android:inputType="text"/>
+                android:inputType="text"
+                app:voiceIcon="@drawable/ic_voice"/>
 
             <LinearLayout
                 android:id="@+id/llOptions"

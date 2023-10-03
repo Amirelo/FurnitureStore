@@ -1,8 +1,7 @@
-package com.example.furniturestore
+package com.example.furniturestore.fragments
 
 import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furniturestore.R
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.adapters.RoomAdapter
 import com.example.furniturestore.adapters.StoryAdapter
@@ -66,11 +66,15 @@ class HomeFragment : Fragment() {
         rcStories.addItemDecoration(storyDecoration)
 
         val roomDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        roomDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.spacing_ver_16)!!)
+        roomDecoration.setDrawable(ContextCompat.getDrawable(requireContext(),
+            R.drawable.spacing_ver_16
+        )!!)
         rcRooms.addItemDecoration(roomDecoration)
 
         val popularDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        popularDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.spacing_ver_16)!!)
+        popularDecoration.setDrawable(ContextCompat.getDrawable(requireContext(),
+            R.drawable.spacing_ver_16
+        )!!)
         rcPopulars.addItemDecoration(popularDecoration)
 
 

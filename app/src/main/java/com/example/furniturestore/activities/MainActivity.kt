@@ -1,9 +1,10 @@
-package com.example.furniturestore
+package com.example.furniturestore.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
+import com.example.furniturestore.fragments.HomeFragment
+import com.example.furniturestore.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

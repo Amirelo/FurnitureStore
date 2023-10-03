@@ -1,4 +1,4 @@
-package com.example.furniturestore
+package com.example.furniturestore.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furniturestore.R
 import com.example.furniturestore.adapters.CategoryAdapter
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.models.Category

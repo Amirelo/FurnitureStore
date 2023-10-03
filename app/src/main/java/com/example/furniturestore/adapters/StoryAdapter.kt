@@ -1,22 +1,15 @@
 package com.example.furniturestore.adapters
 
-import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.BitmapFactory
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.furniturestore.MainActivity
 import com.example.furniturestore.R
 import com.example.furniturestore.utilities.Utils
-import java.net.URL
-import java.util.concurrent.Executors
 
 class StoryAdapter(private val dataSet: Array<String>, private val context: Context) :
     RecyclerView.Adapter<StoryAdapter.ViewHolder>() {

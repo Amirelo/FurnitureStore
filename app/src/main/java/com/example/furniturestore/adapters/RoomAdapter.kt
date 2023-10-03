@@ -3,7 +3,6 @@ package com.example.furniturestore.adapters
 import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.furniturestore.MainActivity
+import com.example.furniturestore.activities.MainActivity
 import com.example.furniturestore.R
-import com.example.furniturestore.SearchFragment
+import com.example.furniturestore.fragments.SearchFragment
 import com.example.furniturestore.utilities.Utils
 
 class RoomAdapter (private val dataset: Array<String>, private val context:Context):
