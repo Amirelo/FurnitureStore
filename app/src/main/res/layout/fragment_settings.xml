@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SettingsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeliverTo"
+            style="@style/TertiaryButtonStyleNoBG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deliver to"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_alignEnd="@+id/btnDeliverTo"
+            android:text="Great Brittain"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnDeliverTo"
+            style="@style/TertiaryButtonStyleNoBG"
+            android:textAlignment="viewStart"
+            android:text="Currency"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_alignEnd="@+id/btnCurrency"
+            android:layout_below="@+id/btnDeliverTo"
+            android:textSize="16sp"
+            android:text="$ USD"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnCurrency"
+            style="@style/TertiaryButtonStyleNoBG"
+            android:textAlignment="viewStart"
+            android:text="Notifications"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCurrency"
+            android:layout_below="@+id/btnCurrency"
+            android:scaleX="1.4"
+            android:scaleY="1.4"
+            app:trackTint="@color/gold_400"
+            app:thumbTint="@color/gray_tab"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnNotifications"
+            style="@style/TertiaryButtonStyleNoBG"
+            android:textAlignment="viewStart"
+            android:text="terms and conditions"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

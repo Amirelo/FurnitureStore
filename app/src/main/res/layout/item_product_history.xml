@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="94dp"
+        android:layout_height="115dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:src="@color/gray_tab"
+        android:clipToOutline="true"
+        android:background="@drawable/border_rounded_8"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivProduct"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="$30"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivProduct"
+        android:layout_below="@+id/tvPrice"
+        android:layout_marginBottom="4dp"
+        android:textSize="12sp"
+        android:textColor="@color/gray_placeholder"
+        android:text="Wooden bedside table featuring a raised design"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivProduct"
+        android:layout_toEndOf="@+id/ivProduct"
+        android:text="Order again" />
+
+
+</RelativeLayout>
