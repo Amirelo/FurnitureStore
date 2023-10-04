@@ -13,7 +13,7 @@ import com.example.furniturestore.R
 import com.example.furniturestore.utilities.Utils
 import com.google.android.material.slider.Slider
 
-class TimeLineAdapter(private val dataset: Int, private val context: Context) :
+class TimeLineAdapter(private val dataset: Int, private val context: Context, private var reelPosition: Int) :
     RecyclerView.Adapter<TimeLineAdapter.ViewHolder>() {
     val utils = Utils()
 
@@ -41,20 +41,26 @@ class TimeLineAdapter(private val dataset: Int, private val context: Context) :
         var value = 0
         val maxValue = holder.sldTimeLine.valueTo
         holder.sldTimeLine.value = value.toFloat()
-        Thread(Runnable {
-            while (value < maxValue) {
-                holder.sldTimeLine.postDelayed(Runnable {
-                    if(value < maxValue){
-                        value += 1
-                    } else {
-                        value = maxValue.toInt()
-                    }
-                    holder.sldTimeLine.value = value.toFloat()
 
-                }, 50)
-                SystemClock.sleep(50)
-            }
-        }).start()
+        if (position == reelPosition){
+            Thread(Runnable {
+                while (value < maxValue) {
+                    holder.sldTimeLine.postDelayed(Runnable {
+                        if(value < maxValue){
+                            value += 1
+                            holder.sldTimeLine.value = value.toFloat()
+                        } else {
+                            value = maxValue.toInt()
+                            holder.sldTimeLine.value = value.toFloat()
+                        }
+
+
+                    }, 50)
+                    SystemClock.sleep(50)
+                }
+            }).start()
+        }
+
 
 
     }
