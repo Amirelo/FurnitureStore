@@ -1,7 +1,11 @@
 package com.example.furniturestore.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +14,8 @@ import com.example.furniturestore.R
 import com.example.furniturestore.adapters.StoryReelAdapter
 import com.example.furniturestore.adapters.TimeLineAdapter
 import com.example.furniturestore.models.StoryReel
+import java.lang.Exception
+import java.lang.Math.abs
 
 class StoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +42,65 @@ class StoryActivity : AppCompatActivity() {
         rcStoryReels.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
         rcTimeLines.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
 
-        val snapHelper: SnapHelper = LinearSnapHelper()
-        snapHelper.attachToRecyclerView(rcStoryReels)
+        rcStoryReels.addOnItemTouchListener(object: RecyclerView.OnItemTouchListener{
+            var position = -1
+            val gestureDetector = GestureDetector(applicationContext, object: GestureDetector.SimpleOnGestureListener(){
+                override fun onFling(
+                    e1: MotionEvent,
+                    e2: MotionEvent,
+                    velocityX: Float,
+                    velocityY: Float
+                ): Boolean {
+                    try{
+                        val swipeThreshold = 100
+                        val difX = e2.x - e1.x
+                        val difY = e2.y - e1.y
+                        if(abs(difX) > abs(difY)){
+                            if(abs(difX)> swipeThreshold && abs(velocityY) > swipeThreshold){
+                                if (difX<0){
+                                    position ++
+                                    Toast.makeText(applicationContext, "LTR", Toast.LENGTH_SHORT).show()
+                                } else{
+                                    position --
+                                    Toast.makeText(applicationContext, "RTL", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        }
+                    } catch (e: Exception){
+                        e.printStackTrace()
+                    }
+                    return true
+                }
+
+                override fun onSingleTapUp(e: MotionEvent): Boolean {
+                    return false
+                }
+            })
+
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                var child = rv.findChildViewUnder(e.x, e.y)
+                if (child != null && gestureDetector.onTouchEvent(e)){
+                    Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
+                    if (position > reelSize-1){
+                        position = 0
+                    }
+                    if (position < 0){
+                        position = reelSize - 1
+                    }
+                    rv.findViewHolderForAdapterPosition(position)?.itemView?.isSelected = true
+                    rv.smoothScrollToPosition(position)
+                }
+                return false
+            }
+
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+                TODO("Not yet implemented")
+            }
+        })
 
     }
 }
