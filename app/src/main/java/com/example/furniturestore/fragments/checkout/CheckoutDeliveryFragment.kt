@@ -1,4 +1,4 @@
-package com.example.furniturestore.fragments
+package com.example.furniturestore.fragments.checkout
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gold_300"
-    tools:context=".fragments.CheckoutCompletedFragment">
+    tools:context=".fragments.checkout.CheckoutCompletedFragment">
 
     <include
         layout="@layout/view_prompt"

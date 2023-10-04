@@ -1,4 +1,4 @@
-package com.example.furniturestore.fragments
+package com.example.furniturestore.fragments.checkout
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.furniturestore.R
 
-class CheckoutPaymentFragment : Fragment() {
-
+class CheckoutInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_checkout_payment, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_checkout_info, container, false)
     }
-
 }
