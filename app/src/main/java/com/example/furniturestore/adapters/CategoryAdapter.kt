@@ -38,7 +38,7 @@ class CategoryAdapter (private val dataset: List<Category>) :
 
         val thread: Thread = Thread(Runnable {
             val img = cate.image
-            val bmp = Utils().getImg(img)
+            val bmp = Utils().getImgScaled(img)
 
             holder.ivCategory.post(Runnable{
                 holder.ivCategory.setImageBitmap(bmp)

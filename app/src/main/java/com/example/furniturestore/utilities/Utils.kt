@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.WindowManager
 import java.net.URL
 
@@ -19,7 +18,7 @@ class Utils {
         return arrayOf(height, width)
     }
 
-    fun getImg(path: String): Bitmap{
+    fun getImgScaled(path: String): Bitmap{
 
         val url = URL(path);
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
@@ -30,11 +29,19 @@ class Utils {
         return resizeBmp;
     }
 
+    fun getImg(path: String): Bitmap{
+
+        val url = URL(path);
+        val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+
+        return bmp;
+    }
+
     fun getImgWithSize(path: String, dimensions: Array<Int>): Bitmap{
         val url = URL(path);
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
-        val resizeBmp: Bitmap = Bitmap.createScaledBitmap(bmp, dimensions[0], dimensions[1], true)
+        val resizeBmp: Bitmap = Bitmap.createScaledBitmap(bmp, dimensions[1], dimensions[0], true)
 
 
         return resizeBmp;

@@ -46,7 +46,7 @@ class ProductRowAdapter (private val dataset: List<Product>, context: Context) :
 
         val thread:Thread = Thread(Runnable {
             val img = obj.prodImg
-            val bmp = Utils().getImg(img)
+            val bmp = Utils().getImgScaled(img)
             holder.ivProduct.post(Runnable{
                 holder.ivProduct.setImageBitmap(bmp)
             })

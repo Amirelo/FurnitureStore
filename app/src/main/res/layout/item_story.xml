@@ -3,7 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/border_rounded_8"
-
     android:clipToOutline="true">
 
     <ImageView

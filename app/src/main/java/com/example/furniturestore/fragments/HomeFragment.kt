@@ -21,6 +21,7 @@ import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.adapters.RoomAdapter
 import com.example.furniturestore.adapters.StoryAdapter
 import com.example.furniturestore.models.Product
+import com.example.furniturestore.utilities.Utils
 
 class HomeFragment : Fragment() {
 

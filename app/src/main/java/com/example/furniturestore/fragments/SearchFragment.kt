@@ -19,6 +19,7 @@ import com.example.furniturestore.adapters.CategoryAdapter
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.models.Category
 import com.example.furniturestore.models.Product
+import com.example.furniturestore.utilities.Utils
 import com.google.android.material.appbar.MaterialToolbar
 
 class SearchFragment : Fragment() {
