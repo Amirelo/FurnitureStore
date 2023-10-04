@@ -61,7 +61,7 @@
             android:layout_below="@+id/tvTitle1"
             app:iconTint="@color/black_text"
             app:iconGravity="end"
-            app:icon="@drawable/clear"
+            app:icon="@drawable/ic_clear"
             android:textColor="@color/black_text"
             android:textAlignment="viewStart"
             android:text="ULMO"/>

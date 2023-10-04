@@ -16,7 +16,7 @@
         app:subtitleCentered="true"
         app:subtitleTextColor="@color/gray_placeholder"
         app:subtitle="1 of 3"
-        app:navigationIcon="@drawable/arrow_left">
+        app:navigationIcon="@drawable/ic_arrow_left">
 
     </com.google.android.material.appbar.MaterialToolbar>
 

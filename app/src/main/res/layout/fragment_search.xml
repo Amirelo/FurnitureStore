@@ -12,7 +12,7 @@
         android:layout_height="56dp"
         app:title="@string/item_text_not_loaded"
         app:titleCentered="true"
-        app:navigationIcon="@drawable/chevron_left"/>
+        app:navigationIcon="@drawable/ic_chevron_left"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:textColorHint="@color/gray_placeholder"
                 android:iconifiedByDefault="false"
                 android:inputType="text"
-                app:voiceIcon="@drawable/ic_voice"/>
+                app:voiceIcon="@drawable/ic_micro"/>
 
             <LinearLayout
                 android:id="@+id/llOptions"
@@ -56,7 +56,7 @@
                     android:background="@drawable/border_rounded_4"
                     android:textColor="@color/black_text"
                     app:backgroundTint="@color/gray_tab"
-                    app:icon="@drawable/direction_vertical"
+                    app:icon="@drawable/ic_direction_vertical"
                     app:iconTint="@color/black_text"
                     app:iconGravity="textEnd"/>
 
@@ -72,7 +72,7 @@
                     android:background="@drawable/border_rounded_8"
                     android:textColor="@color/black_text"
                     app:backgroundTint="@color/gray_tab"
-                    app:icon="@drawable/filter"
+                    app:icon="@drawable/ic_filter"
                     app:iconTint="@color/black_text"
                     app:iconGravity="textEnd"/>
 

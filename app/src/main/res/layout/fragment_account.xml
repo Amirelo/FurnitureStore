@@ -16,7 +16,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="16dp"
-            android:src="@drawable/settings"
+            android:src="@drawable/ic_settings"
             android:layout_gravity="end"/>
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_height="64dp"
             style="@style/TertiaryButtonStyleNoBG"
             app:iconTint="@color/black_text"
-            app:icon="@drawable/bag"
+            app:icon="@drawable/ic_bag"
             android:textAlignment="viewStart"
             android:text="My orders"/>
 
@@ -45,7 +45,7 @@
             android:layout_height="64dp"
             style="@style/TertiaryButtonStyleNoBG"
             app:iconTint="@color/black_text"
-            app:icon="@drawable/user"
+            app:icon="@drawable/ic_user"
             android:textAlignment="viewStart"
             android:text="My details"/>
 
@@ -54,7 +54,7 @@
             android:layout_height="64dp"
             style="@style/TertiaryButtonStyleNoBG"
             app:iconTint="@color/black_text"
-            app:icon="@drawable/pin"
+            app:icon="@drawable/ic_pin"
             android:textAlignment="viewStart"
             android:text="Address book"/>
 
@@ -63,7 +63,7 @@
             android:layout_height="64dp"
             style="@style/TertiaryButtonStyleNoBG"
             app:iconTint="@color/black_text"
-            app:icon="@drawable/card"
+            app:icon="@drawable/ic_card"
             android:textAlignment="viewStart"
             android:text="Payment methods"/>
 
@@ -72,7 +72,7 @@
             android:layout_height="64dp"
             style="@style/TertiaryButtonStyleNoBG"
             app:iconTint="@color/black_text"
-            app:icon="@drawable/logout"
+            app:icon="@drawable/ic_logout"
             android:textAlignment="viewStart"
             android:text="Sign out"/>
 

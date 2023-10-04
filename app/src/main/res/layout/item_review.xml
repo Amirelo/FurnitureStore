@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/star"/>
+        android:src="@drawable/ic_star"/>
 
     <ImageView
         android:id="@+id/ivStar2"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/ivStar1"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/star"/>
+        android:src="@drawable/ic_star"/>
 
     <ImageView
         android:id="@+id/ivStar3"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/ivStar2"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/star"/>
+        android:src="@drawable/ic_star"/>
 
     <ImageView
         android:id="@+id/ivStar4"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/ivStar3"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/star"/>
+        android:src="@drawable/ic_star"/>
 
     <ImageView
         android:id="@+id/ivStar5"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/ivStar4"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/star"/>
+        android:src="@drawable/ic_star"/>
 
     <TextView
         android:id="@+id/tvPostTime"
@@ -58,7 +58,7 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginBottom="2dp"
-        android:src="@drawable/temp"
+        android:src="@drawable/ic_info"
         android:scaleType="centerCrop"
         android:background="@drawable/border_circle"
         android:clipToOutline="true"

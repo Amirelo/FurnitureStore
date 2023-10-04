@@ -18,7 +18,7 @@
         android:padding="4dp"
         android:backgroundTint="@color/white"
         android:background="@drawable/border_circle"
-        android:src="@drawable/arrow_left"/>
+        android:src="@drawable/ic_arrow_left"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
         android:padding="4dp"
         android:backgroundTint="@color/white"
         android:background="@drawable/border_circle"
-        android:src="@drawable/heart"/>
+        android:src="@drawable/ic_heart"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcProdImages"
@@ -67,7 +67,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/border_rounded_8"
         app:backgroundTint="@color/gold_400"
-        app:icon="@drawable/bag"
+        app:icon="@drawable/ic_bag"
         app:iconGravity="textEnd"
         app:iconTint="@color/black_text"
         android:textColor="@color/black_text"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:src="@drawable/sale"/>
+                android:src="@drawable/ic_sale"/>
 
             <TextView
                 android:id="@+id/tvDiscountTitle"
@@ -127,7 +127,7 @@
             android:layout_height="64dp"
             android:layout_below="@+id/rlDiscount"
             app:backgroundTint="#00000000"
-            app:icon="@drawable/chevron_right"
+            app:icon="@drawable/ic_chevron_right"
             app:iconTint="@color/black_text"
             app:iconGravity="end"
             android:textAlignment="textStart"

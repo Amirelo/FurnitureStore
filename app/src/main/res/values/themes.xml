@@ -8,13 +8,6 @@
         <item name="android:textColor">@color/black_text</item>
     </style>
 
-    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/bg_splashscreen</item>
-        <item name="android:statusBarColor">@color/gold_400</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:textColor">@color/black_text</item>
-    </style>
-
     <style name="PrimaryButtonStyle">
         <item name="android:background">@drawable/border_rounded_8</item>
         <item name="backgroundTint">@color/gold_400</item>

@@ -31,7 +31,7 @@
         android:layout_height="24dp"
         android:layout_below="@+id/ivProduct"
         android:layout_alignEnd="@+id/ivProduct"
-        android:background="@drawable/heart"/>
+        android:background="@drawable/ic_heart"/>
 
     <TextView
         android:id="@+id/tvDescription"
