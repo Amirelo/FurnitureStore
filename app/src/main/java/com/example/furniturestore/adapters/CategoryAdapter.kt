@@ -12,6 +12,8 @@ import com.example.furniturestore.utilities.Utils
 
 class CategoryAdapter (private val dataset: List<Category>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
+
+    val utils = Utils()
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         val ivCategory: ImageView
         val tvCategory: TextView
@@ -36,9 +38,8 @@ class CategoryAdapter (private val dataset: List<Category>) :
 
         holder.tvCategory.text = cate.name
 
-        val thread: Thread = Thread(Runnable {
-            val img = cate.image
-            val bmp = Utils().getImgScaled(img)
+        val thread = Thread(Runnable {
+            val bmp = utils.getImgScaled(cate.image, "ICON")
 
             holder.ivCategory.post(Runnable{
                 holder.ivCategory.setImageBitmap(bmp)

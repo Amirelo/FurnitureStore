@@ -40,7 +40,7 @@ class StoryAdapter(private val dataSet: Array<String>, private val context: Cont
             val thread = Thread(Runnable {
                 val img = res.getStringArray(R.array.arr_story_images)[position]
 
-                val bmp = Utils().getImgScaled(img);
+                val bmp = Utils().getImgScaled(img, "");
 
                 holder.ivStory.post(Runnable{
                     holder.ivStory.setImageBitmap(bmp)

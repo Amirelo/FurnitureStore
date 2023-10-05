@@ -36,16 +36,16 @@ class SearchFragment : Fragment() {
         val tvTitleCategory: TextView = view.findViewById(R.id.tvTitleCategory)
 
         // temp category list
-        val cate1 = Category(1, "Furniture","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate2 = Category(2, "Lighting","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate3 = Category(3, "Rugs","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate4 = Category(4, "Mirrors","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate5 = Category(5, "Blankets","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate6 = Category(6, "Cushions","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate7 = Category(7, "Curtains","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate8 = Category(8, "Baskets","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate9 = Category(9, "Vases","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
-        val cate10 = Category(10, "Boxes","https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg")
+        val cate1 = Category(1, "Furniture","https://images.pexels.com/photos/2959583/pexels-photo-2959583.jpeg")
+        val cate2 = Category(2, "Lighting","https://images.pexels.com/photos/1123262/pexels-photo-1123262.jpeg")
+        val cate3 = Category(3, "Rugs","https://images.pexels.com/photos/6044743/pexels-photo-6044743.jpeg")
+        val cate4 = Category(4, "Mirrors","https://images.pexels.com/photos/6186523/pexels-photo-6186523.jpeg")
+        val cate5 = Category(5, "Blankets","https://images.pexels.com/photos/821649/pexels-photo-821649.jpeg")
+        val cate6 = Category(6, "Cushions","https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg")
+        val cate7 = Category(7, "Curtains","https://images.pexels.com/photos/462197/pexels-photo-462197.jpeg")
+        val cate8 = Category(8, "Baskets","https://images.pexels.com/photos/2113125/pexels-photo-2113125.jpeg")
+        val cate9 = Category(9, "Vases","https://images.pexels.com/photos/5825578/pexels-photo-5825578.jpeg")
+        val cate10 = Category(10, "Boxes","https://images.pexels.com/photos/793522/pexels-photo-793522.jpeg")
 
         val listCategory: List<Category> = listOf(cate1,cate2,cate3,cate4,cate5,cate6,cate7,cate8, cate9,cate10)
 

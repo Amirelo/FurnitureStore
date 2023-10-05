@@ -37,7 +37,7 @@ class TimeLineAdapter(private val dataset: Int, private val context: Context, pr
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val screenSize = utils.getScreenSize(context)
-        holder.sldTimeLine.layoutParams.width = (screenSize[1] / (dataset))
+        holder.sldTimeLine.layoutParams.width = (screenSize[0] / (dataset))
         var value = 0
         val maxValue = holder.sldTimeLine.valueTo
         holder.sldTimeLine.value = value.toFloat()

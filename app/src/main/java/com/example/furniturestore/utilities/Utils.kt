@@ -20,18 +20,22 @@ class Utils {
         windowManager.defaultDisplay.getMetrics(displayMetric)
         val height = displayMetric.heightPixels
         val width = displayMetric.widthPixels
-        return arrayOf(height, width)
+        return arrayOf(width, height)
     }
 
-    fun getImgScaled(path: String): Bitmap{
-
-        val url = URL(path);
+    fun getImgScaled(path: String, type: String): Bitmap{
+        var width = 500
+        var height = 500
+        when (type){
+            "ICON" ->  {
+                width = 40
+                height = 40
+            }
+        }
+        val url = URL("$path?auto=compress&cs=tinysrgb&w=$width&h=$height&dpr=1");
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
-        val resizeBmp: Bitmap = Bitmap.createScaledBitmap(bmp, 640, 320, true)
-
-
-        return resizeBmp;
+        return bmp;
     }
 
     fun getImg(path: String): Bitmap{
@@ -42,14 +46,13 @@ class Utils {
         return bmp;
     }
 
-    fun getImgWithSize(path: String, dimensions: Array<Int>): Bitmap{
-        val url = URL(path);
+    fun getImgWithSize(path: String, width: Int, height: Int): Bitmap{
+        val url = URL("$path?auto=compress&cs=tinysrgb&w=$width&h=$height&dpr=1");
         val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
-        val resizeBmp: Bitmap = Bitmap.createScaledBitmap(bmp, dimensions[1], dimensions[0], true)
 
 
-        return resizeBmp;
+        return bmp;
     }
 
     fun loadJSONFromAsset(fileName: String,context: Context): String{

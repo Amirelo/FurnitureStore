@@ -42,7 +42,7 @@ class RoomAdapter (private val dataset: Array<String>, private val context:Conte
         val res: Resources = context.resources
         val thread: Thread = Thread(Runnable {
             val img = res.getStringArray(R.array.arr_room_images)[position]
-            val bmp = Utils().getImgScaled(img)
+            val bmp = Utils().getImgScaled(img, "")
             holder.ivRoom.post(Runnable{
                 holder.ivRoom.setImageBitmap(bmp)
             })

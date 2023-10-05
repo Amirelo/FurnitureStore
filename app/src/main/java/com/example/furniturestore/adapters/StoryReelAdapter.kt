@@ -45,7 +45,8 @@ class StoryReelAdapter (private val dataset: List<StoryReel>, private val contex
         holder.tvDescription.text = reel.description
 
         val thread = Thread(Runnable {
-            var imgBitmap = util.getImgWithSize(reel.image, util.getScreenSize(context))
+            val screenSize = util.getScreenSize(context)
+            var imgBitmap = util.getImgWithSize(reel.image, screenSize[0], screenSize[1])
             holder.ivImage.post(Runnable{
                 holder.ivImage.setImageBitmap(imgBitmap)
             })
