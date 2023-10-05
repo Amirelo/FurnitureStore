@@ -5,6 +5,11 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.DisplayMetrics
 import android.view.WindowManager
+import org.json.JSONArray
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.lang.Exception
 import java.net.URL
 
 class Utils {
@@ -45,5 +50,24 @@ class Utils {
 
 
         return resizeBmp;
+    }
+
+    fun loadJSONFromAsset(fileName: String,context: Context): String{
+        try {
+            val file = context.assets.open(fileName);
+            var bufferReader = BufferedReader(InputStreamReader(file))
+            val stringBuilder = StringBuilder()
+
+            bufferReader.useLines { lines ->
+                lines.forEach {
+                    stringBuilder.append(it)
+                }
+            }
+            val jsonstring = stringBuilder.toString()
+            return jsonstring
+        } catch (e:Exception){
+            e.printStackTrace()
+        }
+        return ""
     }
 }
