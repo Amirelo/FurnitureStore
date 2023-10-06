@@ -1,5 +1,6 @@
 package com.example.furniturestore.fragments
 
+import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
@@ -8,13 +9,17 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.R
+import com.example.furniturestore.activities.MainActivity
 import com.example.furniturestore.adapters.CategoryAdapter
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.models.Category
@@ -31,9 +36,11 @@ class SearchFragment : Fragment() {
         val view: View =  inflater.inflate(R.layout.fragment_search, container, false)
         val rcCategories: RecyclerView = view.findViewById(R.id.rcCategories)
         val rcProducts: RecyclerView = view.findViewById(R.id.rcProducts)
-        val toolbar: MaterialToolbar = view.findViewById(R.id.toolbar)
         val llOptions: LinearLayout = view.findViewById(R.id.llOptions)
         val tvTitleCategory: TextView = view.findViewById(R.id.tvTitleCategory)
+        val svSearch: AutoCompleteTextView = view.findViewById(R.id.svSearch)
+
+        val activity: MainActivity = context as MainActivity
 
         // temp category list
         val cate1 = Category(1, "Furniture","https://images.pexels.com/photos/2959583/pexels-photo-2959583.jpeg")
@@ -55,9 +62,15 @@ class SearchFragment : Fragment() {
         val obj3 : Product = Product(3, "curtain", 239000.0, "Is a curtain","20230928", "https://images.pexels.com/photos/3255244/pexels-photo-3255244.jpeg")
         val obj4 : Product = Product(4, "carpet", 121000.0, "Is a carpet","20230928", "https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg")
         val listProducts = listOf(obj1,obj2,obj3,obj4)
+        val listProductNames = arrayOf(obj1.prodName,obj2.prodName,obj3.prodName,obj4.prodName)
 
         val categoryAdapter = CategoryAdapter(listCategory)
         val productAdapter = ProductRowAdapter(listProducts, requireContext())
+
+        val searchAdapter = ArrayAdapter<String>(requireContext(), androidx.appcompat.R.layout.select_dialog_item_material, listProductNames)
+        svSearch.threshold = 1
+        svSearch.setAdapter(searchAdapter)
+
 
         rcCategories.adapter = categoryAdapter
         rcProducts.adapter = productAdapter
@@ -67,11 +80,10 @@ class SearchFragment : Fragment() {
 
         val bundle:Bundle = requireArguments()
 
-        toolbar.title = bundle.getString("SEARCHTITLE")
+        val roomTitle = bundle.getString("SEARCHTITLE").toString()
+        activity.updateToolbar(roomTitle)
 
-        toolbar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
+
 
         rcCategories.addOnItemTouchListener(object: RecyclerView.OnItemTouchListener{
             var gestureDetector = GestureDetector(requireContext(), object:GestureDetector.SimpleOnGestureListener() {
@@ -84,8 +96,6 @@ class SearchFragment : Fragment() {
                 if (child != null && gestureDetector.onTouchEvent(e)){
                     val position = rv.getChildAdapterPosition(child)
                     Toast.makeText(requireContext(), listCategory[position].name, Toast.LENGTH_SHORT).show()
-
-                    toolbar.title = listCategory[position].name
 
                     rcCategories.visibility = View.GONE
                     tvTitleCategory.visibility = View.GONE
@@ -107,5 +117,15 @@ class SearchFragment : Fragment() {
 
         return view
     }
+
+    /*fun backPressed(){
+        if (rcCategories.visibility == View.GONE){
+            rcCategories.visibility = View.VISIBLE
+            rcProducts.visibility = View.GONE
+            toolbar.title = roomTitle
+        } else{
+            parentFragmentManager.popBackStack()
+        }
+    }*/
 
 }

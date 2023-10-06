@@ -22,9 +22,9 @@
     <ImageView
         android:id="@+id/ivRoom"
         android:layout_width="0dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
         android:layout_height="100dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
 </LinearLayout>

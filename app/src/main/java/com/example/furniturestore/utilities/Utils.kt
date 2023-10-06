@@ -28,8 +28,8 @@ class Utils {
         var height = 500
         when (type){
             "ICON" ->  {
-                width = 40
-                height = 40
+                width = 80
+                height = 80
             }
         }
         val url = URL("$path?auto=compress&cs=tinysrgb&w=$width&h=$height&dpr=1");

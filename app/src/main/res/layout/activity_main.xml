@@ -7,6 +7,12 @@
     tools:context=".activities.MainActivity"
     android:orientation="vertical">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
     <FrameLayout
         android:id="@+id/flMain"
         android:layout_width="match_parent"

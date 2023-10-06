@@ -10,6 +10,7 @@
         android:layout_width="88dp"
         android:layout_height="88dp"
         android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:background="@color/gray_placeholder"/>
 
     <TextView
