@@ -10,118 +10,121 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcProdImages"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:padding="4dp"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/border_circle"
-        android:src="@drawable/ic_arrow_left"/>
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/border_circle"
+            android:backgroundTint="@color/white"
+            android:padding="6dp"
+            android:src="@drawable/ic_arrow_left" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
-        android:padding="4dp"
-        android:backgroundTint="@color/white"
-        android:background="@drawable/border_circle"
-        android:src="@drawable/ic_heart"/>
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/border_circle"
+            android:backgroundTint="@color/white"
+            android:padding="6dp"
+            android:src="@drawable/ic_heart" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcProdImages"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"/>
 
-    <TextView
-        android:id="@+id/tvPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rcProdImages"
-        android:layout_marginHorizontal="16dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="@string/item_text_not_loaded"/>
 
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_below="@+id/tvPrice"
-        android:textColor="@color/gray_placeholder"
-        android:text="@string/item_text_not_loaded"/>
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rcProdImages"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/item_text_not_loaded"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcColors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDescription"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPrice"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/item_text_not_loaded"
+            android:textColor="@color/gray_placeholder" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rcColors"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/border_rounded_8"
-        app:backgroundTint="@color/gold_400"
-        app:icon="@drawable/ic_bag"
-        app:iconGravity="textEnd"
-        app:iconTint="@color/black_text"
-        android:textColor="@color/black_text"
-        android:text="Add to bag"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcColors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDescription" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rcColors"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border_rounded_8"
+            android:text="Add to bag"
+            android:textColor="@color/black_text"
+            app:backgroundTint="@color/gold_400"
+            app:icon="@drawable/ic_bag"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/black_text" />
 
         <RelativeLayout
             android:id="@+id/rlDiscount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/btnAdd"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="8dp"
-            android:paddingVertical="14dp"
             android:paddingHorizontal="16dp"
-            android:layout_below="@+id/btnAdd">
+            android:paddingVertical="14dp">
 
             <ImageView
                 android:id="@+id/ivDiscountIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_sale"/>
+                android:src="@drawable/ic_sale" />
 
             <TextView
                 android:id="@+id/tvDiscountTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/ivDiscountIcon"
                 android:layout_marginStart="16dp"
-                android:textSize="14sp"
-                android:text="Discount for you"/>
+                android:layout_toEndOf="@id/ivDiscountIcon"
+                android:text="Discount for you"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/ivDiscountIcon"
-                android:layout_marginStart="16dp"
                 android:layout_below="@+id/tvDiscountTitle"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/ivDiscountIcon"
+                android:text="Use promocode ULMO"
                 android:textColor="@color/gray_placeholder"
-                android:textSize="14sp"
-                android:text="Use promocode ULMO"/>
+                android:textSize="14sp" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                app:backgroundTint="@color/gold_400"
+                android:layout_centerVertical="true"
                 android:background="@drawable/border_rounded_8"
+                android:text="Copy"
                 android:textColor="@color/black_text"
-                android:text="Copy"/>
-            
+                app:backgroundTint="@color/gold_400" />
+
         </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -129,34 +132,34 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_below="@+id/rlDiscount"
-            app:backgroundTint="#00000000"
-            app:icon="@drawable/ic_chevron_right"
-            app:iconTint="@color/black_text"
-            app:iconGravity="end"
+            android:text="Product Infomation"
             android:textAlignment="textStart"
             android:textColor="@color/black_text"
-            android:text="Product Infomation"/>
+            app:backgroundTint="#00000000"
+            app:icon="@drawable/ic_chevron_right"
+            app:iconGravity="end"
+            app:iconTint="@color/black_text" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnReviews"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_below="@+id/tvProductInfo"
-            app:backgroundTint="#00000000"
+            android:text="Reviews"
             android:textAlignment="textStart"
             android:textColor="@color/black_text"
-            android:text="Reviews"/>
+            app:backgroundTint="#00000000" />
 
         <TextView
             android:id="@+id/tvReviews"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:layout_below="@+id/tvProductInfo"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:gravity="center_vertical"
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/gray_placeholder"
-            android:text="-50"/>
+            android:text="-50"
+            android:textColor="@color/gray_placeholder" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnQuestions"
@@ -164,38 +167,38 @@
             android:layout_height="64dp"
             android:layout_below="@+id/btnReviews"
             android:layout_marginBottom="8dp"
-            app:backgroundTint="#00000000"
+            android:text="Questions and answers"
             android:textAlignment="textStart"
             android:textColor="@color/black_text"
-            android:text="Questions and answers"/>
+            app:backgroundTint="#00000000" />
 
         <TextView
             android:id="@+id/tvQuestions"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:layout_below="@+id/btnReviews"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:gravity="center_vertical"
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/gray_placeholder"
-            android:text="-50"/>
+            android:text="-50"
+            android:textColor="@color/gray_placeholder" />
 
         <TextView
             android:id="@+id/tvOtherProductsHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnQuestions"
-            android:layout_marginVertical="16dp"
             android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:text="You might also like"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:text="You might also like"/>
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcOtherProducts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvOtherProductsHeader"/>
+            android:layout_below="@+id/tvOtherProductsHeader" />
 
     </RelativeLayout>
 

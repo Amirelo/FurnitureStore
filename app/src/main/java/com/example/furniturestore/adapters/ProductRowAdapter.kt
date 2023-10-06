@@ -13,6 +13,7 @@ import com.example.furniturestore.utilities.Utils
 
 class ProductRowAdapter (private val dataset: List<Product>, context: Context) :
     RecyclerView.Adapter<ProductRowAdapter.ViewHolder>(){
+    val utils = Utils()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ivProduct: ImageView
@@ -41,12 +42,13 @@ class ProductRowAdapter (private val dataset: List<Product>, context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val obj:Product = dataset[position]
 
-        holder.tvPrice.text = obj.price.toString()
+        val price = utils.currencyFormat("vi", "VN", obj.price)
+        holder.tvPrice.text = price
         holder.tvDescription.text = obj.description
 
         val thread:Thread = Thread(Runnable {
             val img = obj.prodImg
-            val bmp = Utils().getImgScaled(img, "")
+            val bmp = utils.getImgScaled(img, "")
             holder.ivProduct.post(Runnable{
                 holder.ivProduct.setImageBitmap(bmp)
             })

@@ -1,7 +1,7 @@
 package com.example.furniturestore.models
 
-class Category (
-    val _id: Int,
+data class Category (
+    val id: Int,
     val name: String,
     val image: String
 )
