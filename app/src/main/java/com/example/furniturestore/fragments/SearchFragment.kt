@@ -1,6 +1,5 @@
 package com.example.furniturestore.fragments
 
-import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
@@ -14,7 +13,6 @@ import android.widget.AutoCompleteTextView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,8 +22,6 @@ import com.example.furniturestore.adapters.CategoryAdapter
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.models.Category
 import com.example.furniturestore.models.Product
-import com.example.furniturestore.utilities.Utils
-import com.google.android.material.appbar.MaterialToolbar
 
 class SearchFragment : Fragment() {
     override fun onCreateView(

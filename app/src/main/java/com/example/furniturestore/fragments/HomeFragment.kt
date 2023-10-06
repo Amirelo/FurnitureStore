@@ -3,7 +3,6 @@ package com.example.furniturestore.fragments
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import android.view.GestureDetector
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,11 +16,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.R
+import com.example.furniturestore.activities.ProductDetailsActivity
 import com.example.furniturestore.activities.StoryActivity
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.adapters.RoomAdapter
 import com.example.furniturestore.adapters.StoryAdapter
-import com.example.furniturestore.models.Category
 import com.example.furniturestore.models.Product
 import com.example.furniturestore.models.StoryReel
 import com.example.furniturestore.utilities.Utils
@@ -141,6 +140,35 @@ class HomeFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
+
+        rcPopulars.addOnItemTouchListener(object: RecyclerView.OnItemTouchListener{
+            var gestureDetector = GestureDetector(requireContext(), object: GestureDetector.SimpleOnGestureListener(){
+                override fun onSingleTapUp(e: MotionEvent): Boolean {
+                    return true
+                }
+            })
+
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                var child = rv.findChildViewUnder(e.x, e.y)
+                if (child != null && gestureDetector.onTouchEvent(e)){
+                    var postiion = rv.getChildAdapterPosition(child)
+                    var intent = Intent(context, ProductDetailsActivity::class.java)
+                    intent.putExtra("PRODUCTDETAILS", obj1)
+                    startActivity(intent)
+                }
+
+                return false
+            }
+
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+                TODO("Not yet implemented")
+            }
+        }
+        )
 
 
         return view

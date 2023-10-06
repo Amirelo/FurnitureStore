@@ -5,12 +5,13 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.DisplayMetrics
 import android.view.WindowManager
-import org.json.JSONArray
 import java.io.BufferedReader
-import java.io.InputStream
 import java.io.InputStreamReader
 import java.lang.Exception
 import java.net.URL
+import java.text.NumberFormat
+import java.util.Currency
+import java.util.Locale
 
 class Utils {
 
@@ -53,6 +54,12 @@ class Utils {
 
 
         return bmp;
+    }
+
+    fun currencyFormat (language: String, country: String, amount: Double?) : String{
+        val currencyFormat = NumberFormat.getCurrencyInstance(Locale(language,country))
+
+        return currencyFormat.format(amount)
     }
 
     fun loadJSONFromAsset(fileName: String,context: Context): String{
