@@ -69,6 +69,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+
+
     </LinearLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/view_empty"
+        layout="@layout/view_prompt" />
 
 </FrameLayout>
