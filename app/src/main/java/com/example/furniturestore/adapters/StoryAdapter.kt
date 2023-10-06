@@ -9,9 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.R
+import com.example.furniturestore.models.StoryReel
 import com.example.furniturestore.utilities.Utils
 
-class StoryAdapter(private val dataSet: Array<String>, private val context: Context) :
+class StoryAdapter(private val dataSet: List<StoryReel>, private val context: Context) :
     RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -30,17 +31,17 @@ class StoryAdapter(private val dataSet: Array<String>, private val context: Cont
     }
 
     override fun getItemCount(): Int {
-            return dataSet.size -1
+            return dataSet.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvStory.text = dataSet[position]
+        val item = dataSet[position]
+        holder.tvStory.text = item.title
         val res:Resources = context.resources
 
             val thread = Thread(Runnable {
-                val img = res.getStringArray(R.array.arr_story_images)[position]
 
-                val bmp = Utils().getImgScaled(img, "");
+                val bmp = Utils().getImgScaled(item.image, "");
 
                 holder.ivStory.post(Runnable{
                     holder.ivStory.setImageBitmap(bmp)

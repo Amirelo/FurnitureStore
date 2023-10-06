@@ -21,7 +21,9 @@ import com.example.furniturestore.activities.StoryActivity
 import com.example.furniturestore.adapters.ProductRowAdapter
 import com.example.furniturestore.adapters.RoomAdapter
 import com.example.furniturestore.adapters.StoryAdapter
+import com.example.furniturestore.models.Category
 import com.example.furniturestore.models.Product
+import com.example.furniturestore.models.StoryReel
 import com.example.furniturestore.utilities.Utils
 
 class HomeFragment : Fragment() {
@@ -39,8 +41,36 @@ class HomeFragment : Fragment() {
         val rcPopulars: RecyclerView = view.findViewById(R.id.rcPopulars)
         val res:Resources = resources
 
+        var item1: StoryReel = StoryReel(
+            1,
+            "https://images.pexels.com/photos/716107/pexels-photo-716107.jpeg",
+            "Assorted commemorative plates",
+            "Popular wearables from Dubai, United Arab Emirates"
+        )
+        var item2: StoryReel = StoryReel(
+            2,
+            "https://images.pexels.com/photos/2767689/pexels-photo-2767689.jpeg",
+            "Assorted color yarn lot",
+            "New batch of yarns from Centurion, GP, South Africa"
+        )
+        var item3: StoryReel = StoryReel(
+            3,
+            "https://images.pexels.com/photos/7147464/pexels-photo-7147464.jpeg",
+            "Workshop",
+            "Mannequin near sewing machine in workshop"
+        )
+        var item4: StoryReel = StoryReel(
+            4,
+            "https://images.pexels.com/photos/4040586/pexels-photo-4040586.jpeg",
+            "Crystals",
+            "Composition of rose quartz and geode amethyst arranged in row"
+        )
+
+        val reelTitleList = listOf<StoryReel>(item1, item2, item3, item4)
+
+
+
         // get data
-        val storyDataset = (res.getStringArray(R.array.arr_stories)+"")
         val roomDataset = res.getStringArray(R.array.arr_rooms);
 
         // temp product list
@@ -51,7 +81,7 @@ class HomeFragment : Fragment() {
         val listProducts = listOf(obj1,obj2,obj3,obj4)
 
         // adapters
-        val storyAdapter = StoryAdapter(storyDataset, requireContext())
+        val storyAdapter = StoryAdapter(reelTitleList, requireContext())
         val roomAdapter = RoomAdapter(roomDataset, requireContext())
         val popularAdapter = ProductRowAdapter(listProducts, requireContext())
 
