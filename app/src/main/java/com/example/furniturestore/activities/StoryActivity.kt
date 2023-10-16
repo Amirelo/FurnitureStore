@@ -67,7 +67,6 @@ class StoryActivity : AppCompatActivity() {
         rcTimeLines.layoutManager =
             LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
 
-
         val handler = Handler()
         val thread = Thread(Runnable {
             while (true) {

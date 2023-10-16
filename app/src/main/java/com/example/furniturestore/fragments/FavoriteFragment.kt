@@ -19,9 +19,9 @@ class FavoriteFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_favorite, container, false)
 
         viewEmpty = view.findViewById(R.id.view_empty)
-        var ivPlaceholder = viewEmpty.findViewById<ImageView>(R.id.ivEmptyPlaceholder)
-        var tvPlaceholder1 = viewEmpty.findViewById<TextView>(R.id.tvEmptyPlaceholder1)
-        var tvPlaceholder2 = viewEmpty.findViewById<TextView>(R.id.tvEmptyPlaceholder2)
+        val ivPlaceholder = viewEmpty.findViewById<ImageView>(R.id.ivEmptyPlaceholder)
+        val tvPlaceholder1 = viewEmpty.findViewById<TextView>(R.id.tvEmptyPlaceholder1)
+        val tvPlaceholder2 = viewEmpty.findViewById<TextView>(R.id.tvEmptyPlaceholder2)
 
         ivPlaceholder.setImageResource(R.drawable.ic_surprised)
         tvPlaceholder1.text = "nothing saved..."
