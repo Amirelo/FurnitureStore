@@ -1,5 +1,6 @@
 package com.example.furniturestore.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.SystemClock
@@ -22,7 +23,8 @@ class StoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_story)
 
-        var position = 0
+        var position = intent.getIntExtra("STORYPOSITION", 0)
+        Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
 
 
         val rcStoryReels = findViewById<RecyclerView>(R.id.rcStoryReels)
@@ -57,7 +59,7 @@ class StoryActivity : AppCompatActivity() {
         val reelSize = reelList.size
 
         val reelAdapter = StoryReelAdapter(reelList, applicationContext)
-        var timeLineAdapter = TimeLineAdapter(reelSize, applicationContext, 0)
+        var timeLineAdapter = TimeLineAdapter(reelSize, applicationContext, position)
 
         rcStoryReels.adapter = reelAdapter
         rcTimeLines.adapter = timeLineAdapter
@@ -66,6 +68,8 @@ class StoryActivity : AppCompatActivity() {
             LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
         rcTimeLines.layoutManager =
             LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
+
+        rcStoryReels.smoothScrollToPosition(position)
 
         val handler = Handler()
         val thread = Thread(Runnable {

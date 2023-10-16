@@ -53,17 +53,17 @@ class SearchFragment : Fragment() {
         val listCategory: List<Category> = listOf(cate1,cate2,cate3,cate4,cate5,cate6,cate7,cate8, cate9,cate10)
 
         // temp product list
-        val obj1 : Product = Product(1, "table", 30000.0, "Is a table","20230928", "https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg")
-        val obj2 : Product = Product(2, "chair", 207550.0, "Is a chair","20230928", "https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg")
-        val obj3 : Product = Product(3, "curtain", 239000.0, "Is a curtain","20230928", "https://images.pexels.com/photos/3255244/pexels-photo-3255244.jpeg")
-        val obj4 : Product = Product(4, "carpet", 121000.0, "Is a carpet","20230928", "https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg")
+        val obj1 = Product(1, "table", 30000.0, "Is a table","20230928", "https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg")
+        val obj2 = Product(2, "chair", 207550.0, "Is a chair","20230928", "https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg")
+        val obj3 = Product(3, "curtain", 239000.0, "Is a curtain","20230928", "https://images.pexels.com/photos/3255244/pexels-photo-3255244.jpeg")
+        val obj4 = Product(4, "carpet", 121000.0, "Is a carpet","20230928", "https://images.pexels.com/photos/3705540/pexels-photo-3705540.jpeg")
         val listProducts = listOf(obj1,obj2,obj3,obj4)
         val listProductNames = arrayOf(obj1.prodName,obj2.prodName,obj3.prodName,obj4.prodName)
 
         val categoryAdapter = CategoryAdapter(listCategory)
         val productAdapter = ProductRowAdapter(listProducts, requireContext())
 
-        val searchAdapter = ArrayAdapter<String>(requireContext(), androidx.appcompat.R.layout.select_dialog_item_material, listProductNames)
+        val searchAdapter = ArrayAdapter(requireContext(), androidx.appcompat.R.layout.select_dialog_item_material, listProductNames)
         svSearch.threshold = 1
         svSearch.setAdapter(searchAdapter)
 

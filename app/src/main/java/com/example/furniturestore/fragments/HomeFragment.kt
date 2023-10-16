@@ -126,8 +126,9 @@ class HomeFragment : Fragment() {
                 var child = rv.findChildViewUnder(e.x, e.y)
                 if (child != null && gestureDetector.onTouchEvent(e)){
                     val position = rv.getChildAdapterPosition(child)
-                    Toast.makeText(requireContext(), "Story touched", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(requireContext(), StoryActivity::class.java))
+                    val intent = Intent(requireContext(), StoryActivity::class.java)
+                    intent.putExtra("STORYPOSITION", position)
+                    startActivity(intent)
                 }
                 return false
             }

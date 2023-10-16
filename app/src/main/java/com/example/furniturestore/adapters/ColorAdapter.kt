@@ -1,7 +1,6 @@
 package com.example.furniturestore.adapters
 
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.R
 import com.example.furniturestore.models.ProductColor
-import java.util.zip.Inflater
 
 class ColorAdapter(private val dataset: List<ProductColor>)
     : RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
@@ -40,13 +38,13 @@ class ColorAdapter(private val dataset: List<ProductColor>)
         val item: ProductColor = dataset[position]
         holder.tvName.text = item.name
 
-        val thread = Thread(Runnable {
+        val thread = Thread {
             val colorCode = item.colorCode
-            holder.ivColor.post(Runnable{
-                var gradDrawable: GradientDrawable = holder.ivColor.background as GradientDrawable
+            holder.ivColor.post {
+                val gradDrawable: GradientDrawable = holder.ivColor.background as GradientDrawable
                 gradDrawable.setColor(Color.parseColor(colorCode))
-            })
-        })
+            }
+        }
         thread.start()
     }
 }
