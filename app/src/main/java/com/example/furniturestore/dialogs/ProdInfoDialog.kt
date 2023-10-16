@@ -9,7 +9,6 @@ import android.view.Window
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import com.example.furniturestore.R
-import java.util.zip.Inflater
 
 class ProdInfoDialog: DialogFragment() {
     private lateinit var ivClear: ImageView
@@ -24,7 +23,6 @@ class ProdInfoDialog: DialogFragment() {
         ivClear.setOnClickListener{
             parentFragmentManager.popBackStack()
         }
-
         return view
     }
 
