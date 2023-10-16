@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.furniturestore.R
 import com.example.furniturestore.models.ProductColor
 
-class ColorAdapter(private val dataset: List<ProductColor>)
+class ColorAdapter(private val dataset: List<ProductColor>, private val selectedPosition: Int)
     : RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -37,14 +37,18 @@ class ColorAdapter(private val dataset: List<ProductColor>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item: ProductColor = dataset[position]
         holder.tvName.text = item.name
+        val bgDrawable: GradientDrawable = holder.ivBackground.background as GradientDrawable
+        var gradDrawable: GradientDrawable = holder.ivColor.background as GradientDrawable
 
-        val thread = Thread {
-            val colorCode = item.colorCode
-            holder.ivColor.post {
-                val gradDrawable: GradientDrawable = holder.ivColor.background as GradientDrawable
-                gradDrawable.setColor(Color.parseColor(colorCode))
-            }
+        val colorCode = item.colorCode
+        gradDrawable.setColor(Color.parseColor(colorCode))
+
+        if (selectedPosition == position){
+            bgDrawable.setColor(Color.BLACK)
+            holder.tvName.setTextColor(Color.WHITE)
+        } else{
+            bgDrawable.setColor(Color.WHITE)
+            holder.tvName.setTextColor(Color.BLACK)
         }
-        thread.start()
     }
 }

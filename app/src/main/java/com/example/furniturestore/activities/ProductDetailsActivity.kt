@@ -2,6 +2,9 @@ package com.example.furniturestore.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -26,6 +29,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     private lateinit var rcColors: RecyclerView
     private lateinit var ivBack: ImageView
     private lateinit var ivFavorite: ImageView
+
+    private var selectedColorPos = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
@@ -66,7 +71,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         rcImages.adapter = prodImageAdapter
         rcImages.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
 
-        val colorAdapter = ColorAdapter(colorList)
+        var colorAdapter = ColorAdapter(colorList, selectedColorPos)
         rcColors.adapter = colorAdapter
         rcColors.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
 
@@ -94,8 +99,35 @@ class ProductDetailsActivity : AppCompatActivity() {
             } else{
                 ivFavorite.setImageResource(R.drawable.ic_heart)
             }
-
         }
+
+        rcColors.addOnItemTouchListener(object: RecyclerView.OnItemTouchListener{
+            val gestureDetector = GestureDetector(applicationContext,
+                object : GestureDetector.SimpleOnGestureListener(){
+
+                    override fun onSingleTapUp(e: MotionEvent): Boolean {
+                        return true
+                    }
+            })
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                val child = rv.findChildViewUnder(e.x, e.y)
+                if (child != null && gestureDetector.onTouchEvent(e)){
+                    selectedColorPos = rv.getChildAdapterPosition(child)
+                    colorAdapter = ColorAdapter(colorList, selectedColorPos)
+                    rcColors.adapter = colorAdapter
+                }
+                return false
+            }
+
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
     }
 }
