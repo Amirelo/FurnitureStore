@@ -140,11 +140,11 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     }
 
-    fun showProdInfoDialog(){
+    private fun showProdInfoDialog(){
         val fragmentManager =supportFragmentManager
         val newFragment = ProdInfoDialog()
         val transaction = fragmentManager.beginTransaction()
-        transaction.setCustomAnimations(R.anim.slide_down, R.anim.slide_up)
+        transaction.setCustomAnimations(R.anim.slide_down, 0, 0, R.anim.slide_up)
         transaction.add(android.R.id.content, newFragment).addToBackStack(null).commit()
 
     }
