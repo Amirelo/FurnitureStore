@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingHorizontal="16dp"
+    android:backgroundTint="@color/white"
     android:background="@drawable/border_top_rounded_24"
     android:clipToOutline="true"
     android:orientation="vertical">

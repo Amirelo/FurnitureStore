@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -17,10 +18,12 @@ import androidx.recyclerview.widget.SnapHelper
 import com.example.furniturestore.R
 import com.example.furniturestore.adapters.ColorAdapter
 import com.example.furniturestore.adapters.ProductImagesAdapter
+import com.example.furniturestore.dialogs.ProdInfoDialog
 import com.example.furniturestore.models.Product
 import com.example.furniturestore.models.ProductColor
 import com.example.furniturestore.models.ProductImage
 import com.example.furniturestore.utilities.Utils
+import com.google.android.material.button.MaterialButton
 
 class ProductDetailsActivity : AppCompatActivity() {
     private lateinit var tvPrice: TextView
@@ -29,6 +32,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     private lateinit var rcColors: RecyclerView
     private lateinit var ivBack: ImageView
     private lateinit var ivFavorite: ImageView
+    private lateinit var btnProdInfo: MaterialButton
 
     private var selectedColorPos = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +47,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         rcColors = findViewById(R.id.rcColors)
         ivBack = findViewById(R.id.ivBack)
         ivFavorite = findViewById(R.id.ivFavorite)
+        btnProdInfo = findViewById(R.id.btnProductInfo)
 
         var isFavorite = false
 
@@ -128,6 +133,19 @@ class ProductDetailsActivity : AppCompatActivity() {
             }
 
         })
+
+        btnProdInfo.setOnClickListener{
+            showProdInfoDialog()
+        }
+
+    }
+
+    fun showProdInfoDialog(){
+        val fragmentManager =supportFragmentManager
+        val newFragment = ProdInfoDialog()
+        val transaction = fragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.slide_down, R.anim.slide_up)
+        transaction.add(android.R.id.content, newFragment).addToBackStack(null).commit()
 
     }
 }

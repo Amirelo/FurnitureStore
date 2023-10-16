@@ -131,7 +131,7 @@
         </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/tvProductInfo"
+            android:id="@+id/btnProductInfo"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_below="@+id/rlDiscount"
@@ -147,7 +147,7 @@
             android:id="@+id/btnReviews"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_below="@+id/tvProductInfo"
+            android:layout_below="@+id/btnProductInfo"
             android:text="Reviews"
             android:textAlignment="textStart"
             android:textColor="@color/black_text"
@@ -157,7 +157,7 @@
             android:id="@+id/tvReviews"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
-            android:layout_below="@+id/tvProductInfo"
+            android:layout_below="@+id/btnProductInfo"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:gravity="center_vertical"
