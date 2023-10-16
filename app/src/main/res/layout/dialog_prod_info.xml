@@ -45,6 +45,7 @@
         android:text="Height:"/>
 
     <TextView
+        android:id="@+id/tvHeightValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle1"
@@ -64,6 +65,7 @@
         android:text="Widhth:"/>
 
     <TextView
+        android:id="@+id/tvWidthValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvHeight"
@@ -83,6 +85,7 @@
         android:text="Depth:"/>
 
     <TextView
+        android:id="@+id/tvDepthValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvWidth"
@@ -102,6 +105,7 @@
         android:text="Weight:"/>
 
     <TextView
+        android:id="@+id/tvWeightValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDepth"
@@ -131,6 +135,7 @@
         android:text="Main material:"/>
 
     <TextView
+        android:id="@+id/tvMainMaterialValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle2"
@@ -150,6 +155,7 @@
         android:text="Weight:"/>
 
     <TextView
+        android:id="@+id/tvOtherMaterialValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvMaterial"

@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.MotionEvent
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -22,6 +20,7 @@ import com.example.furniturestore.dialogs.ProdInfoDialog
 import com.example.furniturestore.models.Product
 import com.example.furniturestore.models.ProductColor
 import com.example.furniturestore.models.ProductImage
+import com.example.furniturestore.models.ProductInfo
 import com.example.furniturestore.utilities.Utils
 import com.google.android.material.button.MaterialButton
 
@@ -35,6 +34,8 @@ class ProductDetailsActivity : AppCompatActivity() {
     private lateinit var btnProdInfo: MaterialButton
 
     private var selectedColorPos = 0
+
+    val productInfo = ProductInfo(1, 40.6, 35.3, 27.8, 70.0, "100% Cidar Wood", "100% Cidar Wood", 3)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
@@ -71,6 +72,8 @@ class ProductDetailsActivity : AppCompatActivity() {
         val color3 = ProductColor(3, "Black", "#000000")
 
         val colorList = listOf(color1, color2, color3)
+
+
 
         val prodImageAdapter = ProductImagesAdapter(imageList, applicationContext)
         rcImages.adapter = prodImageAdapter
@@ -143,6 +146,9 @@ class ProductDetailsActivity : AppCompatActivity() {
     private fun showProdInfoDialog(){
         val fragmentManager =supportFragmentManager
         val newFragment = ProdInfoDialog()
+        val bundle = Bundle()
+        bundle.putParcelable("PRODUCTINFO", productInfo)
+        newFragment.arguments = bundle
         val transaction = fragmentManager.beginTransaction()
         transaction.setCustomAnimations(R.anim.slide_up, 0, 0, R.anim.slide_down)
         transaction.add(android.R.id.content, newFragment).addToBackStack(null).commit()

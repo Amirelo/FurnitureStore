@@ -34,38 +34,38 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        // initilize
+        // initialize
         val rcStories: RecyclerView = view.findViewById(R.id.rcStories)
         val rcRooms: RecyclerView = view.findViewById(R.id.rcRooms)
         val rcPopulars: RecyclerView = view.findViewById(R.id.rcPopulars)
         val res:Resources = resources
 
-        var item1: StoryReel = StoryReel(
+        var item1 = StoryReel(
             1,
             "https://images.pexels.com/photos/716107/pexels-photo-716107.jpeg",
             "Assorted commemorative plates",
             "Popular wearables from Dubai, United Arab Emirates"
         )
-        var item2: StoryReel = StoryReel(
+        var item2 = StoryReel(
             2,
             "https://images.pexels.com/photos/2767689/pexels-photo-2767689.jpeg",
             "Assorted color yarn lot",
             "New batch of yarns from Centurion, GP, South Africa"
         )
-        var item3: StoryReel = StoryReel(
+        var item3 = StoryReel(
             3,
             "https://images.pexels.com/photos/7147464/pexels-photo-7147464.jpeg",
             "Workshop",
             "Mannequin near sewing machine in workshop"
         )
-        var item4: StoryReel = StoryReel(
+        var item4 = StoryReel(
             4,
             "https://images.pexels.com/photos/4040586/pexels-photo-4040586.jpeg",
             "Crystals",
             "Composition of rose quartz and geode amethyst arranged in row"
         )
 
-        val reelTitleList = listOf<StoryReel>(item1, item2, item3, item4)
+        val reelTitleList = listOf(item1, item2, item3, item4)
 
 
 
